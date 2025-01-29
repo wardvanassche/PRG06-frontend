@@ -1,7 +1,6 @@
 import {createBrowserRouter, RouterProvider} from "react-router";
 import Layout from "./Layout.jsx";
 import Home from "./Home.jsx";
-import About from "./About.jsx";
 import Dishes from "./Dishes.jsx";
 import Dish from "./Dish.jsx";
 import CreateDish from "./CreateDish.jsx";
@@ -14,10 +13,6 @@ const router = createBrowserRouter([{
         {
             path: "/",
             element: <Home />
-        },
-        {
-            path: "/about",
-            element: <About />
         },
         {
             path: "/dishes",
@@ -37,7 +32,6 @@ const router = createBrowserRouter([{
         },
     ]
 }])
-
 
 function App() {
 
