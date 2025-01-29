@@ -4,6 +4,8 @@ import Home from "./Home.jsx";
 import About from "./About.jsx";
 import Dishes from "./Dishes.jsx";
 import Dish from "./Dish.jsx";
+import CreateDish from "./CreateDish.jsx";
+import UpdateDish from "./UpdateDish.jsx";
 
 const router = createBrowserRouter([{
     path: "/",
@@ -14,16 +16,24 @@ const router = createBrowserRouter([{
             element: <Home />
         },
         {
-            path: "/dishes/:id",
-            element: <Dish />
+            path: "/about",
+            element: <About />
         },
         {
             path: "/dishes",
             element: <Dishes />
         },
         {
-            path: "/about",
-            element: <About />
+            path: "/dishes/:id",
+            element: <Dish />
+        },
+        {
+            path: "/dishes/create",
+            element: <CreateDish />
+        },
+        {
+            path: "/dishes/update/:id",
+            element: <UpdateDish />
         },
     ]
 }])

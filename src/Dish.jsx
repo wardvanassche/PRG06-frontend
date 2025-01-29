@@ -9,6 +9,25 @@ function Dish() {
 
     const navigate = useNavigate();
 
+    async function deleteDish(id) {
+        try {
+            const response = await fetch(`http://145.24.222.221:8000/dishes/${id}`, {
+                method: 'DELETE',
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+            console.log("dish deleted");
+
+            // reload
+            navigate('/dishes');
+
+        } catch (error) {
+            console.error('Er is een fout opgetreden:', error);
+            return [];
+        }
+    }
+
     async function fetchDish(id) {
         try {
             const response = await fetch(`http://145.24.222.221:8000/dishes/${id}`, {
@@ -30,40 +49,35 @@ function Dish() {
         fetchDish(id);
     }, []);
 
-    async function deleteDish(id) {
-        try {
-            const response = await fetch(`http://145.24.222.221:8000/dishes/${id}`, {
-                method: 'DELETE',
-                headers: {
-                    'Accept': 'application/json'
-                }
-            });
-
-            // reload
-            navigate('/dishes');
-        } catch (error) {
-            console.error('Er is een fout opgetreden:', error);
-            return [];
-        }
-    }
-
     const handleDelete = () => {
         deleteDish(dish.id);
     }
 
     return(
         <>
-            <h1>Show details for dish {id}</h1>
-
             {
                 dish ? (
-                        <article>
-                            <h1>{dish.dish}</h1>
-                            <h2>{dish.kitchen}</h2>
-                            <p>{dish.author}</p>
-                            <Link to={`/dishes/update/${dish.id}`}>Update</Link>
-                            <button onClick={handleDelete}>Delete</button>
+                        <article className="max-w-2xl mx-auto bg-white shadow-lg rounded-lg p-6 my-8">
+                            <h1 className="text-3xl font-semibold text-gray-900 mb-2">{dish.dish}</h1>
+                            <h2 className="text-xl text-gray-700 mb-4">{dish.kitchen}</h2>
+                            <h3 className="text-sm text-gray-500 mb-6">By {dish.author}</h3>
+                            <p className="text-sm text-gray-500 mb-6">By {dish.description}</p>
+
+                            <div className="flex items-center justify-between">
+                                <Link to={`/dishes/update/${dish.id}`}
+                                      className="text-indigo-600 hover:text-indigo-800 font-semibold">
+                                    Update
+                                </Link>
+
+                                <button
+                                    onClick={handleDelete}
+                                    className="text-white bg-red-600 hover:bg-red-700 rounded-md px-4 py-2 font-medium"
+                                >
+                                    Delete
+                                </button>
+                            </div>
                         </article>
+
                     )
                     :
                     <h1>No dish</h1>

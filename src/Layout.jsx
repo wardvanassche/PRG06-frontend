@@ -15,16 +15,22 @@ function Layout() {
                         Home
                     </Link>
                     <Link
+                        to="/about"
+                        className="text-white hover:text-blue-400 transition duration-300"
+                    >
+                        About
+                    </Link>
+                    <Link
                         to="/dishes"
                         className="text-white hover:text-blue-400 transition duration-300"
                     >
                         Dishes
                     </Link>
                     <Link
-                        to="/about"
+                        to="/dishes/create"
                         className="text-white hover:text-blue-400 transition duration-300"
                     >
-                        About
+                        Create dishes
                     </Link>
                 </div>
             </nav>
