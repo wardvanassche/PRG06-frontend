@@ -8,36 +8,36 @@ import UpdateDish from "./UpdateDish.jsx";
 
 const router = createBrowserRouter([{
     path: "/",
-    element: <Layout />,
+    element: <Layout/>,
     children: [
         {
             path: "/",
-            element: <Home />
+            element: <Home/>
         },
         {
             path: "/dishes",
-            element: <Dishes />
+            element: <Dishes/>
         },
         {
             path: "/dishes/:id",
-            element: <Dish />
+            element: <Dish/>
         },
         {
             path: "/dishes/create",
-            element: <CreateDish />
+            element: <CreateDish/>
         },
         {
             path: "/dishes/update/:id",
-            element: <UpdateDish />
+            element: <UpdateDish/>
         },
     ]
 }])
 
 function App() {
 
-  return (
-      <RouterProvider router={router} />
-  )
+    return (
+        <RouterProvider router={router}/>
+    )
 }
 
 export default App

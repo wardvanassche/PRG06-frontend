@@ -2,7 +2,7 @@ import {Link} from "react-router";
 
 function DishComponent({dish}) {
 
-    return(
+    return (
         <div className="max-w-2xl mx-auto bg-white shadow-lg rounded-lg p-6 my-8">
             <Link
                 to={`/dishes/${dish.id}`}

@@ -1,7 +1,7 @@
 import {useState} from "react";
 import {useNavigate} from "react-router";
 
-function CreateDish(){
+function CreateDish() {
 
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
@@ -14,7 +14,8 @@ function CreateDish(){
     // Generieke handler voor het bijwerken van de state
     const handleInputChange = (event) => {
         const {name, value} = event.target;
-        setFormData({...formData, [name]: value,
+        setFormData({
+            ...formData, [name]: value,
         });
     };
 
@@ -33,8 +34,7 @@ function CreateDish(){
 
             navigate('/dishes');
             console.log(data);
-        }
-        catch (error) {
+        } catch (error) {
             console.error('Er is een fout opgetreden:', error);
         }
     }
@@ -44,7 +44,7 @@ function CreateDish(){
         createDish(formData);
     };
 
-    return(
+    return (
         <>
             <form
                 onSubmit={handleSubmit}
@@ -84,7 +84,8 @@ function CreateDish(){
                     />
                 </div>
                 <div className="mb-6">
-                    <label htmlFor="description" className="block text-sm font-medium text-gray-700 mb-2"> Description: </label>
+                    <label htmlFor="description"
+                           className="block text-sm font-medium text-gray-700 mb-2"> Description: </label>
                     <textarea
                         id="description"
                         name="description"

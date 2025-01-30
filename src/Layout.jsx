@@ -3,7 +3,8 @@ import {Link, Outlet} from "react-router";
 function Layout() {
     return (
         <>
-            <header className="bg-gradient-to-r from-blue-700 to-blue-500 text-white py-6 shadow-lg flex items-center justify-center">
+            <header
+                className="bg-gradient-to-r from-blue-700 to-blue-500 text-white py-6 shadow-lg flex items-center justify-center">
                 <h1 className="text-4xl font-extrabold text-center tracking-wide">PRG06</h1>
             </header>
 
@@ -31,7 +32,7 @@ function Layout() {
             </nav>
 
             <main className="p-8 max-w-4xl mx-auto">
-                <Outlet />
+                <Outlet/>
             </main>
         </>
 

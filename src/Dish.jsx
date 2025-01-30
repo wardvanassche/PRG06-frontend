@@ -53,7 +53,7 @@ function Dish() {
         deleteDish(dish.id);
     }
 
-    return(
+    return (
         <>
             {dish ? (
                 <article className="max-w-2xl mx-auto bg-white shadow-lg rounded-lg p-6 my-8 relative">

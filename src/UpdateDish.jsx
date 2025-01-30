@@ -1,4 +1,4 @@
-import {useNavigate, useParams} from "react-router";
+import {Link, useNavigate, useParams} from "react-router";
 import {useEffect, useState} from "react";
 
 function UpdateDish() {
@@ -48,7 +48,9 @@ function UpdateDish() {
 
             const data = await response.json();
 
-            navigate('/dishes')
+            navigate(
+                `/dishes/${id}`
+            )
             console.log(data);
 
             setFormData({
@@ -57,8 +59,7 @@ function UpdateDish() {
                 author: '',
                 description: '',
             })
-        }
-        catch (error) {
+        } catch (error) {
             console.error('Er is een fout opgetreden:', error);
         }
     }
@@ -71,11 +72,12 @@ function UpdateDish() {
     // Generieke handler voor het bijwerken van de state
     const handleInputChange = (event) => {
         const {name, value} = event.target;
-        setFormData({...formData, [name]: value,
+        setFormData({
+            ...formData, [name]: value,
         });
     };
 
-    return(
+    return (
         <>
             <form
                 onSubmit={handleSubmit}
@@ -115,7 +117,8 @@ function UpdateDish() {
                     />
                 </div>
                 <div className="mb-6">
-                    <label htmlFor="description" className="block text-sm font-medium text-gray-700 mb-2"> Description: </label>
+                    <label htmlFor="description"
+                           className="block text-sm font-medium text-gray-700 mb-2"> Description: </label>
                     <textarea
                         id="description"
                         name="description"
@@ -124,12 +127,21 @@ function UpdateDish() {
                         className="w-full px-4 py-2 h-32 rounded-lg bg-gray-100 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none transition duration-300"
                     ></textarea>
                 </div>
-                <button
-                    type="submit"
-                    className="w-full py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-300 font-bold"
-                >
-                    Submit
-                </button>
+                <div className="flex justify-between">
+                    <Link
+                        to={`/dishes/${id}`}
+                        className="text-white bg-gray-600 hover:bg-gray-700 rounded-md px-4 py-2 font-medium transition duration-300"
+                    >
+                        Back
+                    </Link>
+                    <button
+                        type="submit"
+                        className="py-2 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-300 font-bold"
+                    >
+                        Submit
+                    </button>
+                </div>
+
             </form>
         </>
 

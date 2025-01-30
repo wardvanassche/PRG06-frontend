@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 body {
-    background: url("https://img.freepik.com/premium-photo/food-background-black-herbs-spices-utensil-top-view-with-space-text_1040174-349.jpg?semt=ais_hybrid") no-repeat center center;
+    background-color: antiquewhite;
     background-size: cover;
-    height: 100vh;  /* Ensure the body takes up the full viewport height */
-    margin: 0;  /* Remove default margin to ensure no gaps */
+    height: 100vh;
+    margin: 0;
 }

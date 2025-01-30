@@ -21,12 +21,13 @@ function Dishes() {
                 console.error('Er is een fout opgetreden:', error);
             }
         }
+
         fetchDishes();
     }, []);
 
     const showDishes = dishes ? dishes.map((dish) => (<DishComponent key={dish.id} dish={dish}/>)) : <h1>Loading</h1>;
 
-    return(
+    return (
         <>
             {showDishes}
         </>
