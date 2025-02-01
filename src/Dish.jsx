@@ -1,31 +1,20 @@
-import {Link, useNavigate, useParams} from "react-router";
+import {Link, useParams} from "react-router";
 import {useEffect, useState} from "react";
+import HandleDeleteModal from "./HandleDeleteModal.jsx";
 
 function Dish() {
 
     const params = useParams()
     const id = params.id;
     const [dish, setDish] = useState(null)
+    const [showModal, setShowModal] = useState(false)
 
-    const navigate = useNavigate();
+    const handleOpenModel = () => {
+        setShowModal(true);
+    }
 
-    async function deleteDish(id) {
-        try {
-            const response = await fetch(`http://145.24.222.221:8000/dishes/${id}`, {
-                method: 'DELETE',
-                headers: {
-                    'Accept': 'application/json'
-                }
-            });
-            console.log("dish deleted");
-
-            // reload
-            navigate('/dishes');
-
-        } catch (error) {
-            console.error('Er is een fout opgetreden:', error);
-            return [];
-        }
+    const handleCloseModel = () => {
+        setShowModal(false);
     }
 
     async function fetchDish(id) {
@@ -48,10 +37,6 @@ function Dish() {
     useEffect(() => {
         fetchDish(id);
     }, []);
-
-    const handleDelete = () => {
-        deleteDish(dish.id);
-    }
 
     return (
         <>
@@ -77,12 +62,10 @@ function Dish() {
                             >
                                 Update
                             </Link>
-                            <button
-                                onClick={handleDelete}
-                                className="text-white bg-red-600 hover:bg-red-700 rounded-md px-4 py-2 font-medium transition duration-300"
-                            >
+                            <button onClick={handleOpenModel} className="text-white bg-red-600 hover:bg-red-700 rounded-md px-4 py-2 font-medium transition duration-300">
                                 Delete
                             </button>
+                            {showModal && <HandleDeleteModal showModal={showModal} onClose={handleCloseModel} />}
                         </div>
                     </div>
                 </article>
