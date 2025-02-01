@@ -20,19 +20,19 @@ function Layout() {
                                 to={"/"}
                                 className="text-gray-900 font-semibold transition-all duration-300 ease-in-out hover:text-gray-500"
                             >
-                                Home
+                                HOME
                             </Link>
                             <Link
                                 to={"/dishes"}
                                 className="text-gray-900 font-semibold transition-all duration-300 ease-in-out hover:text-gray-500"
                             >
-                                Dishes
+                                DISHES
                             </Link>
                             <Link
                                 to={"/dishes/create"}
                                 className="text-gray-900 font-semibold transition-all duration-300 ease-in-out hover:text-gray-500"
                             >
-                                Create
+                                CREATE
                             </Link>
                         </div>
 
