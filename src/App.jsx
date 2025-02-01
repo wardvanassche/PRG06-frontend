@@ -5,6 +5,7 @@ import Dishes from "./Dishes.jsx";
 import Dish from "./Dish.jsx";
 import CreateDish from "./CreateDish.jsx";
 import UpdateDish from "./UpdateDish.jsx";
+import HandleDeleteModal from "./HandleDeleteModal.jsx";
 
 const router = createBrowserRouter([{
     path: "/",
@@ -30,6 +31,10 @@ const router = createBrowserRouter([{
             path: "/dishes/update/:id",
             element: <UpdateDish/>
         },
+        {
+            path: "/dishes/delete/:id",
+            element: <HandleDeleteModal/>
+        }
     ]
 }])
 
