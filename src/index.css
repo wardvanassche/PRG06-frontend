@@ -3,8 +3,9 @@
 @tailwind utilities;
 
 body {
-    background-color: antiquewhite;
+    background: linear-gradient(to right, #fce8d4, #fbbf83, #fbcfe8);
     background-size: cover;
     height: 100vh;
     margin: 0;
+    font-family: 'Open Sans', sans-serif;
 }

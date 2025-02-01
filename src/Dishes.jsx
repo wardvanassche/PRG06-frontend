@@ -29,7 +29,9 @@ function Dishes() {
 
     return (
         <>
-            {showDishes}
+            <div className="my-10">
+                {showDishes}
+            </div>
         </>
     )
 }
