@@ -6,10 +6,10 @@ function DishComponent({dish}) {
         <div className="max-w-md mx-auto bg-white shadow-lg rounded-lg overflow-hidden my-6">
             <div className="p-6">
                 <h1 className="text-3xl font-semibold text-gray-900 mb-3">{dish.dish}</h1>
-                <h3 className="text-gray-700 text-lg mb-4 italic">{dish.kitchen}</h3>
+                <h3 className="text-gray-700 text-lg mb-4">{dish.kitchen}</h3>
 
                 <p className="text-gray-500 text-sm mb-6 leading-relaxed">
-                    {dish.author}
+                    By {dish.author}
                 </p>
 
                 <div className="flex justify-end">

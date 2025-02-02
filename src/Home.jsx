@@ -2,7 +2,7 @@ import {Link} from "react-router";
 
 function Home() {
     return (
-        <div className="flex items-center justify-center mt-10">
+        <div className="flex items-center justify-center my-10 max-h-fit">
             <div className="bg-white shadow-lg rounded-lg max-w-4xl w-full flex items-center space-x-8">
 
                 {/* Text Section */}

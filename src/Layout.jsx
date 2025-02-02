@@ -36,8 +36,10 @@ function Layout() {
                             </Link>
                         </div>
 
-                        <div className="flex items-center">
-
+                        <div className="flex items-center justify-end">
+                            <p className="text-gray-400">
+                                
+                            </p>
                         </div>
                     </div>
             </nav>
@@ -49,7 +51,7 @@ function Layout() {
 
             <footer className="bg-gray-50 mt-auto">
                 <div className="flex flex-wrap justify-center">
-                    <div className="lg:w-1/6 md:w-1/2 w-full p-4">
+                    <div className="lg:w-1/5 md:w-1/2 w-full p-4">
                         <div className="p-8 rounded-xl">
                             <h4 className="mb-2 text-lg font-semibold">More Info</h4>
                             <p className="text-base">
@@ -57,7 +59,7 @@ function Layout() {
                             </p>
                         </div>
                     </div>
-                    <div className="lg:w-1/6 md:w-1/2 w-full p-4 flex justify-end">
+                    <div className="lg:w-1/5 md:w-1/2 w-full p-4 flex justify-end">
                         <div className="p-8 rounded-xl flex flex-col">
                             <h4 className="mb-2 text-lg font-semibold">
                                 Discover
