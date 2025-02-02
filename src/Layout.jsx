@@ -2,46 +2,44 @@ import {Link, Outlet} from "react-router";
 
 function Layout() {
     return (
-        <>
-            <body className="flex flex-col min-h-screen">
-
+        <div className="flex flex-col min-h-screen">
             <nav className="px-4 py-1 h-auto mb-4 w-full items-center bg-gray-50">
-                    <div className="w-full justify-between items-center grid grid-cols-3 gap-4">
-                        <div className="flex items-center">
-                            <img className="h-16 w-16 my-3" alt="Logo"
-                                 src="https://www.freeiconspng.com/uploads/food-png-6.png"/>
-                            <span className="font-semibold text-2xl m-2">
+                <div className="w-full justify-between items-center grid grid-cols-3 gap-4">
+                    <div className="flex items-center">
+                        <img className="h-16 w-16 my-3" alt="Logo"
+                             src="https://www.freeiconspng.com/uploads/food-png-6.png"/>
+                        <span className="font-semibold text-2xl m-2">
                                 Discover Dishes
                             </span>
-                        </div>
-
-                        <div className="flex space-x-16 justify-center text-lg">
-                            <Link
-                                to={"/"}
-                                className="text-gray-900 font-semibold transition-all duration-300 ease-in-out hover:text-gray-500"
-                            >
-                                HOME
-                            </Link>
-                            <Link
-                                to={"/dishes"}
-                                className="text-gray-900 font-semibold transition-all duration-300 ease-in-out hover:text-gray-500"
-                            >
-                                DISHES
-                            </Link>
-                            <Link
-                                to={"/dishes/create"}
-                                className="text-gray-900 font-semibold transition-all duration-300 ease-in-out hover:text-gray-500"
-                            >
-                                CREATE
-                            </Link>
-                        </div>
-
-                        <div className="flex items-center justify-end">
-                            <p className="text-gray-400">
-                                
-                            </p>
-                        </div>
                     </div>
+
+                    <div className="flex space-x-16 justify-center text-lg">
+                        <Link
+                            to={"/"}
+                            className="text-gray-900 font-semibold transition-all duration-300 ease-in-out hover:text-gray-500"
+                        >
+                            HOME
+                        </Link>
+                        <Link
+                            to={"/dishes"}
+                            className="text-gray-900 font-semibold transition-all duration-300 ease-in-out hover:text-gray-500"
+                        >
+                            DISHES
+                        </Link>
+                        <Link
+                            to={"/dishes/create"}
+                            className="text-gray-900 font-semibold transition-all duration-300 ease-in-out hover:text-gray-500"
+                        >
+                            CREATE
+                        </Link>
+                    </div>
+
+                    <div className="flex items-center justify-end">
+                        <p className="text-gray-400">
+
+                        </p>
+                    </div>
+                </div>
             </nav>
 
 
@@ -77,10 +75,7 @@ function Layout() {
                     <p className="text-sm">© 2025 Discover Dishes. All rights reserved</p>
                 </div>
             </footer>
-
-            </body>
-        </>
-
+        </div>
     )
 }
 

@@ -29,11 +29,12 @@ function Dishes() {
 
     return (
         <>
-            <div className="my-10">
+            <div className="grid grid-cols-3 gap-y-10 m-10">
                 {showDishes}
             </div>
         </>
-    )
+    );
+
 }
 
 export default Dishes

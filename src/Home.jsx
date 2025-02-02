@@ -24,13 +24,13 @@ function Home() {
                     <div className="flex justify-center space-x-4 mt-6">
                         <Link
                             to="/dishes"
-                            className="px-6 py-3 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-500 transition duration-300"
+                            className="px-6 py-3 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-500 transition transform hover:scale-105 duration-300"
                         >
                             View Dishes
                         </Link>
                         <Link
                             to="/dishes/create"
-                            className="px-6 py-3 bg-gray-800 text-white rounded-lg shadow-md hover:bg-gray-700 transition duration-300"
+                            className="px-6 py-3 bg-gray-800 text-white rounded-lg shadow-md hover:bg-gray-700 transition transform hover:scale-105 duration-300"
                         >
                             Create a Dish
                         </Link>
